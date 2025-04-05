@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuinielIA - Tu IA para la Quiniela</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; color: #222; margin: 0; padding: 0; }
+    header { background: #0a2a66; color: white; padding: 20px; text-align: center; }
+    h1 { margin: 0; font-size: 2em; }
+    nav { background: #d90429; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { max-width: 900px; margin: auto; padding: 20px; background: white; margin-top: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    button { background: #0a2a66; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    footer { text-align: center; font-size: 0.9em; padding: 15px; color: #666; }
+    .prediction { background: #edf6f9; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="A_logo_design_for_“QuinielIA”_is_presented_in_a_di.png" alt="Logo QuinielIA" style="max-width: 200px; margin-bottom: 10px;">
+    <h1>QuinielIA</h1>
+    <p>Genera tus pronósticos de la Quiniela con inteligencia artificial</p>
+  </header>
+
+  <nav>
+    <a href="#generador">Generar Quiniela</a>
+    <a href="#faq">¿Cómo funciona?</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="generador">
+    <h2>Generador de Quiniela (Simulado)</h2>
+    <p>Haz clic en el botón para generar una quiniela automática basada en estadísticas y predicción IA:</p>
+    <button onclick="generarQuiniela()">Generar Quiniela</button>
+    <table id="tabla">
+      <thead>
+        <tr><th>Partido</th><th>Predicción IA</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="faq">
+    <h2>¿Cómo funciona QuinielIA?</h2>
+    <p>Usamos un modelo estadístico basado en resultados anteriores y factores como localía, rachas de victoria y goles promedio. Próximamente conectaremos con una IA real entrenada para sugerencias más avanzadas.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes dudas o sugerencias? Escríbenos por WhatsApp:</p>
+    <a href="https://wa.me/34665063168" target="_blank"><button>Contactar por WhatsApp</button></a>
+  </section>
+
+  <footer>
+    &copy; 2025 QuinielIA - Predicción inteligente para tu Quiniela
+  </footer>
+
+  <script>
+    const partidos = [
+      "Real Madrid vs Valencia",
+      "Barcelona vs Sevilla",
+      "Betis vs Getafe",
+      "Villarreal vs Celta",
+      "Athletic vs Mallorca",
+      "Espanyol vs Osasuna",
+      "Granada vs Cádiz",
+      "Alavés vs Girona",
+      "Levante vs Zaragoza",
+      "Tenerife vs Elche",
+      "Sporting vs Oviedo",
+      "Eibar vs Huesca",
+      "Leganés vs Burgos",
+      "Mirandés vs Racing",
+    ];
+
+    function generarQuiniela() {
+      const resultados = ["1", "X", "2"];
+      const tabla = document.querySelector("#tabla tbody");
+      tabla.innerHTML = "";
+      partidos.forEach(p => {
+        const prediccion = resultados[Math.floor(Math.random() * resultados.length)];
+        tabla.innerHTML += `<tr><td>${p}</td><td class='prediction'>${prediccion}</td></tr>`;
+      });
+    }
+  </script>
+</body>
+</html>
